@@ -1,0 +1,389 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Justin Yu — Portfolio</title>
+  <meta name="description" content="Portfolio and resume for Justin Yu, a Computer Science student at UBC." />
+  <meta property="og:title" content="Justin Yu — Portfolio" />
+  <meta property="og:description" content="Projects, experience, and links for Justin Yu." />
+  <meta property="og:type" content="website" />
+  <style>
+    :root{
+      --bg:#0b0f17; --card:#111827; --muted:#9ca3af; --text:#e5e7eb;
+      --accent:#60a5fa; --accent2:#34d399; --border:rgba(255,255,255,.08);
+      --shadow: 0 10px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --max: 980px;
+    }
+    *{box-sizing:border-box}
+    html,body{
+      margin:0;
+      padding:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+      background:
+        radial-gradient(1200px 700px at 20% -20%, rgba(96,165,250,.25), transparent 60%),
+        radial-gradient(900px 600px at 80% 0%, rgba(52,211,153,.18), transparent 60%),
+        var(--bg);
+      color:var(--text);
+    }
+    a{color:inherit;text-decoration:none}
+    .wrap{max-width:var(--max); margin:0 auto; padding: 28px 18px 70px;}
+    .topbar{display:flex; justify-content:space-between; align-items:center; gap:16px;}
+    .badge{
+      display:inline-flex; align-items:center; gap:10px; padding:10px 12px;
+      border:1px solid var(--border); border-radius:999px;
+      background: rgba(17,24,39,.7); box-shadow: var(--shadow)
+    }
+    .dot{
+      width:10px;height:10px;border-radius:50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      box-shadow:0 0 18px rgba(96,165,250,.45)
+    }
+    .nav{display:flex; flex-wrap:wrap; gap:10px; justify-content:flex-end}
+    .nav a{
+      padding:10px 12px;
+      border:1px solid var(--border);
+      border-radius:999px;
+      background: rgba(17,24,39,.5);
+      font-size: 13px;
+    }
+    .nav a:hover{border-color:rgba(96,165,250,.55)}
+    header{margin-top:28px}
+    h1{font-size: clamp(34px, 4vw, 52px); margin: 10px 0 6px; letter-spacing:-.02em}
+    .subtitle{
+      color: var(--muted); font-size: 16px; line-height:1.5; max-width: 70ch
+    }
+    .cta{display:flex; flex-wrap:wrap; gap:10px; margin-top:18px}
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap:10px;
+      padding: 11px 14px; border-radius: 12px;
+      border:1px solid var(--border);
+      background: rgba(17,24,39,.7);
+      box-shadow: var(--shadow);
+      font-size: 14px;
+    }
+    .btn.primary{
+      border-color: rgba(96,165,250,.6);
+      background: linear-gradient(135deg, rgba(96,165,250,.25), rgba(52,211,153,.18));
+    }
+    .btn:hover{
+      transform: translateY(-1px);
+      transition: .15s ease;
+      border-color: rgba(255,255,255,.18)
+    }
+    .grid{display:grid; grid-template-columns: 1.15fr .85fr; gap: 14px; margin-top: 24px}
+    @media (max-width: 900px){
+      .grid{grid-template-columns:1fr}
+      .nav{justify-content:flex-start}
+    }
+    section{margin-top: 14px}
+    .card{
+      border:1px solid var(--border);
+      background: rgba(17,24,39,.55);
+      border-radius: var(--radius);
+      padding: 18px;
+      box-shadow: var(--shadow);
+    }
+    .card h2{margin:0 0 10px; font-size: 18px; letter-spacing:.01em}
+    .kicker{color: var(--muted); font-size: 13px}
+    .pillrow{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px}
+    .pill{
+      font-size: 12px; color: var(--text);
+      border:1px solid var(--border);
+      padding:7px 10px;
+      border-radius:999px;
+      background: rgba(0,0,0,.15)
+    }
+    .item{
+      display:flex; flex-direction:column; gap:6px;
+      padding: 12px 0;
+      border-top:1px dashed rgba(255,255,255,.10)
+    }
+    .item:first-of-type{border-top:none; padding-top:0}
+    .item-title{
+      display:flex; flex-wrap:wrap; gap:10px;
+      justify-content:space-between; align-items:baseline
+    }
+    .item-title strong{font-size: 15px}
+    .item-title span{color: var(--muted); font-size: 13px}
+    .item p{margin:0; color: var(--muted); line-height:1.5; font-size: 14px}
+    .links{display:flex; flex-wrap:wrap; gap:10px; margin-top:8px}
+    .links a{
+      font-size: 13px; color: var(--text);
+      border:1px solid var(--border); padding: 7px 10px;
+      border-radius: 10px; background: rgba(0,0,0,.12)
+    }
+    .links a:hover{border-color: rgba(96,165,250,.55)}
+    footer{margin-top: 18px; color: var(--muted); font-size: 13px}
+    .small{font-size: 13px; color: var(--muted); line-height:1.6}
+    code.inline{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 12px; padding: 2px 6px;
+      border:1px solid var(--border); border-radius: 8px;
+      background: rgba(0,0,0,.18)
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="topbar">
+      <div class="badge">
+        <span class="dot"></span>
+        <div>
+          <div style="font-weight:650">Justin Yu</div>
+          <div class="kicker">CS student • Vancouver, BC • Worked in Tokyo, Japan</div>
+        </div>
+      </div>
+
+      <nav class="nav" aria-label="Primary">
+        <a href="#projects">Projects</a>
+        <a href="#experience">Experience</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+
+    <header>
+      <h1>Portfolio / Resume</h1>
+      <p class="subtitle">
+        I’m a third-year Computer Science student at UBC interested in
+        <strong>distributed systems</strong>, <strong>web backends</strong>, and
+        <strong>graphics / game development</strong>. I’ve worked on IPFS-based
+        cross-chain protocols in Tokyo, built data-driven web apps, and shipped a
+        small game jam project.
+      </p>
+
+      <div class="cta">
+        <!-- TODO: replace coru-dev with your actual GitHub handle -->
+        <a class="btn primary" href="https://github.com/coru-dev" target="_blank" rel="noreferrer">
+          GitHub
+        </a>
+        <a class="btn" href="https://www.linkedin.com/in/justinyu7122" target="_blank" rel="noreferrer">
+          LinkedIn
+        </a>
+        <a class="btn" href="mailto:justinyu7122@gmail.com">Email</a>
+        <!-- Put resume.pdf in the same folder as this file to make this work -->
+        <a class="btn" href="resume.pdf" target="_blank" rel="noreferrer">Resume (PDF)</a>
+      </div>
+    </header>
+
+    <div class="grid">
+      <!-- Left column: Projects -->
+      <main class="card">
+        <h2 id="projects">Projects</h2>
+
+        <div class="item">
+          <div class="item-title">
+            <strong>UBC Insights — Course data explorer</strong>
+            <span>Sep 2024 – Dec 2024 • TypeScript</span>
+          </div>
+          <p>
+            Developed a TypeScript application to explore historical data about UBC courses, including
+            GPA distributions, instructors, and topics. Implemented dataset ingestion from specifically
+            formatted ZIP files, with validation to reject malformed inputs, and exposed query functions
+            via a server-backed interface that visualizes results as graphs for easier interpretation.
+          </p>
+          <div class="pillrow">
+            <span class="pill">TypeScript</span>
+            <span class="pill">Node.js</span>
+            <span class="pill">Data visualization</span>
+          </div>
+          <div class="links">
+            <!-- Replace with actual repo/demo links -->
+            <a href="https://github.com/coru-dev/ubc-insights" target="_blank" rel="noreferrer">Code (placeholder)</a>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">
+            <strong>IPFS Cross-Chain Timestamping Prototype</strong>
+            <span>May 2023 – Apr 2024 • Go, IPFS</span>
+          </div>
+          <p>
+            Implemented a prototype protocol in Go using IPFS (Kubo, LibP2P, IPNS, Miracl) to enable
+            cross-blockchain communication and decentralized timestamps, allowing permissionless verification
+            of user state with low fees. This work supported a research paper submitted to DSN 2024.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Go</span>
+            <span class="pill">IPFS / Kubo</span>
+            <span class="pill">LibP2P</span>
+            <span class="pill">Distributed systems</span>
+          </div>
+          <div class="links">
+            <a href="https://ieeexplore.ieee.org/document/10664267" target="_blank" rel="noreferrer">
+              Conference paper (DSN 2024)
+            </a>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">
+            <strong>Japanana Tour — Game jam endless runner</strong>
+            <span>Jun 2024 • Godot</span>
+          </div>
+          <p>
+            Learned Godot from scratch during a community game jam and built a 2D endless runner
+            side-scroller themed around a content creator’s tour. Worked with an artist and composer
+            to integrate visual and audio assets, and tuned difficulty and pacing for quick “just one more try” runs.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Godot Engine</span>
+            <span class="pill">GDScript</span>
+            <span class="pill">Game design</span>
+          </div>
+          <div class="links">
+            <a href="#" target="_blank" rel="noreferrer">Game page (add link)</a>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">
+            <strong>RPG Simulator — Web app with BCNF database</strong>
+            <span>Sep 2021 – Dec 2021 • SQL, Node.js</span>
+          </div>
+          <p>
+            Designed and implemented a BCNF-compliant relational schema for an RPG simulator using
+            PostgreSQL/MySQL, then created SQL DDL for setup and population. Built secure RESTful APIs
+            for CRUD operations with authentication and authorization, and contributed to modular
+            code, unit tests, and frontend–backend debugging across sprint-based development.
+          </p>
+          <div class="pillrow">
+            <span class="pill">PostgreSQL / MySQL</span>
+            <span class="pill">SQL</span>
+            <span class="pill">Node.js</span>
+            <span class="pill">REST APIs</span>
+          </div>
+          <div class="links">
+            <a href="#" target="_blank" rel="noreferrer">Code (add link)</a>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-title">
+            <strong>This Website — Lightweight portfolio</strong>
+            <span>2025 • HTML, CSS</span>
+          </div>
+          <p>
+            Single-page portfolio built as a static site and deployed via GitHub Pages (or similar).
+            Focused on fast load times, a clean layout, and clear navigation between projects, experience,
+            and contact information.
+          </p>
+          <div class="pillrow">
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">GitHub Pages</span>
+          </div>
+        </div>
+      </main>
+
+      <!-- Right column: Experience / Skills / Education / Contact -->
+      <aside class="card">
+        <h2 id="experience">Experience</h2>
+
+        <div class="item">
+          <div class="item-title">
+            <strong>Research Assistant — Distributed Ledgers &amp; Security</strong>
+            <span>May 2023 – Apr 2024 • Tokyo, Japan</span>
+          </div>
+          <p>
+            Nippon Telegraph and Telephone Corporation (NTT). Researched modern security technologies
+            related to IPFS, including Kubo, LibP2P, IPNS, and the Miracl library. Implemented a prototype
+            cross-blockchain communication protocol and decentralized timestamping mechanism in Go,
+            and co-wrote a paper describing the design and evaluation submitted to DSN 2024.
+          </p>
+        </div>
+
+        <div class="item">
+          <div class="item-title">
+            <strong>IT Support Technician</strong>
+            <span>Sep 2022 – Apr 2023 • Vancouver, BC</span>
+          </div>
+          <p>
+            College of Physicians and Surgeons of British Columbia. Handled Tier 1 and 2 support tickets
+            using an ITIL-based ticketing system, troubleshooting ~200 devices and software (Office 365,
+            SharePoint, Active Directory, ManageEngine). Managed user and asset statuses for 150+ employees
+            and 500+ IT/non-IT assets.
+          </p>
+        </div>
+
+        <h2 style="margin-top:18px;">Publications</h2>
+        <div class="item">
+          <div class="item-title">
+            <strong>IPFS-based Cross-Blockchain Communication (DSN 2024)</strong>
+            <span>Co-author</span>
+          </div>
+          <p>
+            Co-authored a paper describing an IPFS-backed protocol for decentralized timestamps and
+            permissionless verification of user state across blockchains.
+          </p>
+          <div class="links">
+            <a href="https://ieeexplore.ieee.org/document/10664267" target="_blank" rel="noreferrer">
+              View on IEEE Xplore
+            </a>
+          </div>
+        </div>
+
+        <h2 id="skills" style="margin-top:18px;">Skills</h2>
+        <div class="pillrow">
+          <!-- Languages -->
+          <span class="pill">Go</span>
+          <span class="pill">TypeScript</span>
+          <span class="pill">JavaScript</span>
+          <span class="pill">C++</span>
+          <span class="pill">Java</span>
+          <span class="pill">C</span>
+          <span class="pill">Python</span>
+          <span class="pill">SQL</span>
+          <span class="pill">PowerShell</span>
+          <span class="pill">GDScript</span>
+        </div>
+        <div class="pillrow" style="margin-top:6px;">
+          <!-- Tools / frameworks -->
+          <span class="pill">IPFS / Kubo</span>
+          <span class="pill">LibP2P</span>
+          <span class="pill">Docker</span>
+          <span class="pill">Node.js</span>
+          <span class="pill">Git &amp; GitHub</span>
+          <span class="pill">Office 365</span>
+          <span class="pill">Active Directory</span>
+          <span class="pill">PostgreSQL</span>
+          <span class="pill">MySQL</span>
+          <span class="pill">Godot Engine</span>
+        </div>
+
+        <h2 style="margin-top:18px;">Education</h2>
+        <p class="small">
+          <strong>University of British Columbia</strong><br/>
+          BSc, Computer Science — 3rd Year (Expected Apr 2027)<br/>
+          Relevant coursework: Databases, Computer Hardware &amp; Operating Systems, Algorithms,
+          Applied Machine Learning, Computer Animation.
+        </p>
+
+        <h2 id="contact" style="margin-top:18px;">Contact</h2>
+        <p class="small">
+          Email:
+          <a href="mailto:justinyu7122@gmail.com">
+            <code class="inline">justinyu7122@gmail.com</code>
+          </a><br/>
+          GitHub:
+          <!-- TODO: replace coru-dev with your actual GitHub handle -->
+          <a href="https://github.com/coru-dev" target="_blank" rel="noreferrer">
+            <code class="inline">@coru-dev</code>
+          </a><br/>
+          LinkedIn:
+          <a href="https://www.linkedin.com/in/justinyu7122" target="_blank" rel="noreferrer">
+            <code class="inline">/in/justinyu7122</code>
+          </a>
+        </p>
+      </aside>
+    </div>
+
+    <footer>
+      Built as a single <code class="inline">index.html</code> • Easy to host on GitHub Pages, Vercel, or Netlify
+    </footer>
+  </div>
+</body>
+</html>
