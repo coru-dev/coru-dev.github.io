@@ -105,6 +105,11 @@
       display:flex; flex-wrap:wrap; gap:10px;
       justify-content:space-between; align-items:baseline
     }
+    /* NEW: stacked variant for project headings */
+    .item-title.stacked{
+      flex-direction: column;
+      align-items: flex-start;
+    }
     .item-title strong{font-size: 15px}
     .item-title span{color: var(--muted); font-size: 13px}
     .item p{margin:0; color: var(--muted); line-height:1.5; font-size: 14px}
@@ -174,73 +179,27 @@
       <main class="card">
         <h2 id="projects">Projects</h2>
 
-        <div class="item">
-          <div class="item-title">
-            <strong>UBC Insights — Course data explorer</strong>
-            <span>Sep 2024 – Dec 2024 • TypeScript</span>
-          </div>
-          <p>
-            Developed a TypeScript application to explore historical data about UBC courses, including
-            GPA distributions, instructors, and topics. Implemented dataset ingestion from specifically
-            formatted ZIP files, with validation to reject malformed inputs, and exposed query functions
-            via a server-backed interface that visualizes results as graphs for easier interpretation.
-          </p>
-          <div class="pillrow">
-            <span class="pill">TypeScript</span>
-            <span class="pill">Node.js</span>
-            <span class="pill">Data visualization</span>
-          </div>
-          <!-- <div class="links"> -->
-            <!-- Replace with actual repo/demo links -->
-            <!-- <a href="https://github.com/coru-dev/ubc-insights" target="_blank" rel="noreferrer">Code (placeholder)</a> -->
-          <!-- </div> -->
-        </div>
+        <!-- Reordered: newest-ish first -->
 
         <div class="item">
-          <div class="item-title">
-            <strong>IPFS Cross-Chain Timestamping Prototype</strong>
-            <span>May 2023 – Apr 2024 • Go, IPFS</span>
+          <div class="item-title stacked">
+            <strong>This Website — Lightweight portfolio</strong>
+            <span>2025 • HTML, CSS</span>
           </div>
           <p>
-            Implemented a prototype protocol in Go using IPFS (Kubo, LibP2P, IPNS, Miracl) to enable
-            cross-blockchain communication and decentralized timestamps, allowing permissionless verification
-            of user state with low fees. This work supported a research paper submitted to DSN 2024.
+            Single-page portfolio built as a static site and deployed via GitHub Pages.
+            Focused on fast load times, a clean layout, and clear navigation between
+            projects, experience, and contact information.
           </p>
           <div class="pillrow">
-            <span class="pill">Go</span>
-            <span class="pill">IPFS / Kubo</span>
-            <span class="pill">LibP2P</span>
-            <span class="pill">Distributed systems</span>
-          </div>
-          <div class="links">
-            <a href="https://ieeexplore.ieee.org/document/10664267" target="_blank" rel="noreferrer">
-              Conference paper (2024 IEEE International Conference on Blockchain)
-            </a>
+            <span class="pill">HTML</span>
+            <span class="pill">CSS</span>
+            <span class="pill">GitHub Pages</span>
           </div>
         </div>
 
         <div class="item">
-          <div class="item-title">
-            <strong>Japanana Tour — Game jam endless runner</strong>
-            <span>Jun 2024 • Godot</span>
-          </div>
-          <p>
-            Learned Godot from scratch during a community game jam and built a 2D endless runner
-            side-scroller themed around a content creator’s tour. Worked with an artist and composer
-            to integrate visual and audio assets, and tuned difficulty and pacing for quick “just one more try” runs.
-          </p>
-          <div class="pillrow">
-            <span class="pill">Godot Engine</span>
-            <span class="pill">GDScript</span>
-            <span class="pill">Game design</span>
-          </div>
-          <div class="links">
-            <a href="#" target="https://coru-dev.itch.io/japanana-tour" rel="noreferrer">Game page (itch.io)</a>
-          </div>
-        </div>
-
-        <div class="item">
-          <div class="item-title">
+          <div class="item-title stacked">
             <strong>Database Project — Web app with BCNF database</strong>
             <span>Mar 2025 – Apr 2025 • SQL, Node.js</span>
           </div>
@@ -262,19 +221,70 @@
         </div>
 
         <div class="item">
-          <div class="item-title">
-            <strong>This Website — Lightweight portfolio</strong>
-            <span>2025 • HTML, CSS</span>
+          <div class="item-title stacked">
+            <strong>UBC Insights — Course data explorer</strong>
+            <span>Sep 2024 – Dec 2024 • TypeScript</span>
           </div>
           <p>
-            Single-page portfolio built as a static site and deployed via GitHub Pages (or similar).
-            Focused on fast load times, a clean layout, and clear navigation between projects, experience,
-            and contact information.
+            Developed a TypeScript application to explore historical data about UBC courses, including
+            GPA distributions, instructors, and topics. Implemented dataset ingestion from specifically
+            formatted ZIP files, with validation to reject malformed inputs, and exposed query functions
+            via a server-backed interface that visualizes results as graphs for easier interpretation.
           </p>
           <div class="pillrow">
-            <span class="pill">HTML</span>
-            <span class="pill">CSS</span>
-            <span class="pill">GitHub Pages</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">Node.js</span>
+            <span class="pill">Data visualization</span>
+          </div>
+          <!-- <div class="links"> -->
+            <!-- Replace with actual repo/demo links -->
+            <!-- <a href="https://github.com/coru-dev/ubc-insights" target="_blank" rel="noreferrer">Code (placeholder)</a> -->
+          <!-- </div> -->
+        </div>
+
+        <div class="item">
+          <div class="item-title stacked">
+            <strong>Japanana Tour — Game jam endless runner</strong>
+            <span>Jun 2024 • Godot</span>
+          </div>
+          <p>
+            Learned Godot from scratch during a community game jam and built a 2D endless runner
+            side-scroller themed around a content creator’s tour. Worked with an artist and composer
+            to integrate visual and audio assets, and tuned difficulty and pacing for quick “just one more try” runs.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Godot Engine</span>
+            <span class="pill">GDScript</span>
+            <span class="pill">Game design</span>
+          </div>
+          <div class="links">
+            <a href="https://coru-dev.itch.io/japanana-tour" target="_blank" rel="noreferrer">
+              Game page (itch.io)
+            </a>
+          </div>
+        </div>
+
+        <div class="item">
+          <div class="item-title stacked">
+            <strong>IPFS Cross-Chain Timestamping Prototype</strong>
+            <span>May 2023 – Apr 2024 • Go, IPFS</span>
+          </div>
+          <p>
+            Implemented a prototype protocol in Go using IPFS (Kubo, LibP2P, IPNS, Miracl) to enable
+            cross-blockchain communication and decentralized timestamps, allowing permissionless verification
+            of user state with low fees. This work supported a research paper submitted to the
+            2024 IEEE International Conference on Blockchain.
+          </p>
+          <div class="pillrow">
+            <span class="pill">Go</span>
+            <span class="pill">IPFS / Kubo</span>
+            <span class="pill">LibP2P</span>
+            <span class="pill">Distributed systems</span>
+          </div>
+          <div class="links">
+            <a href="https://ieeexplore.ieee.org/document/10664267" target="_blank" rel="noreferrer">
+              Conference paper (2024 IEEE International Conference on Blockchain)
+            </a>
           </div>
         </div>
       </main>
@@ -292,7 +302,7 @@
             Nippon Telegraph and Telephone Corporation (NTT). Researched modern security technologies
             related to IPFS, including Kubo, LibP2P, IPNS, and the Miracl library. Implemented a prototype
             cross-blockchain communication protocol and decentralized timestamping mechanism in Go,
-            and co-wrote a paper describing the design and evaluation submitted to 2024 IEEE International 
+            and co-wrote a paper describing the design and evaluation submitted to the 2024 IEEE International 
             Conference on Blockchain.
           </p>
         </div>
@@ -355,6 +365,12 @@
           <span class="pill">Godot Engine</span>
         </div>
 
+        <!-- NEW: additional non-CS skills / other stuff -->
+        <h2 style="margin-top:18px;">Additional</h2>
+        <p class="small">
+          Conversational Japanese (daily communication and work/study contexts; no JLPT certification yet).
+        </p>
+
         <h2 style="margin-top:18px;">Education</h2>
         <p class="small">
           <strong>University of British Columbia</strong><br/>
@@ -387,3 +403,4 @@
   </div>
 </body>
 </html>
+
